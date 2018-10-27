@@ -1,0 +1,14 @@
+---
+spring:
+    application:
+        name: basicspiring
+    profiles: 
+        active: test
+management:
+    endpoints:
+        web:
+            exposure:
+                include: 
+                    -   env
+                    -   health
+                    -   info
