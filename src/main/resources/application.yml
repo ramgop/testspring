@@ -4,6 +4,7 @@ spring:
         name: basicspiring
     profiles: 
         active: test
+test: "greetings from DevOps SpringBoot!"
 management:
     endpoints:
         web:
