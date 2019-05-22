@@ -12,4 +12,5 @@ RUN mvn -f /home/app/pom.xml clean package
 FROM openjdk:11-jre-slim
 COPY --from=build /home/app/target/basicspring-0.0.1-SNAPSHOT.jar /usr/local/lib/demo.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/usr/local/lib/demo.jar", "--spring.config.additional-location=/tmp/"]
+VOLUME /usr/local/lib/config
+ENTRYPOINT ["java","-jar","/usr/local/lib/demo.jar", "--spring.config.additional-location=/usr/local/lib/config/"]
